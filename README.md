@@ -2,7 +2,8 @@
 
 This is a personal resume website built with **HTML5** and **CSS3**, showcasing my education, skills, experience, and interests as a Computer Science student at Rutgers University.
 
-🔗 **Live Website**: [https://yinuo8169.github.io/web-resume/](https://yinuo8169.github.io/web-resume/)
+🔗 **Live Website**: [https://yinuo8169.github.io/resume-web/](https://yinuo8169.github.io/resume-web/)
+
 
 ---
 
