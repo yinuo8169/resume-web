@@ -5,270 +5,337 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Yinuo Zheng</title>
   <style>
+    :root {
+      --rutgers-red: #cc0033;
+      --text: #1f1f1f;
+      --muted: #666;
+      --bg: #f6f7f9;
+      --card: #ffffff;
+      --border: #e8e8e8;
+      --shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: 'Segoe UI', Tahoma, sans-serif;
       margin: 0;
-      padding: 0;
-      background-color: #f8f9fa;
-      color: #222;
-      line-height: 1.6;
+      font-family: "Segoe UI", Tahoma, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+    }
+
+    a {
+      color: var(--rutgers-red);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
     }
 
     header {
-      background-color: #cc0033;
+      background: linear-gradient(135deg, #cc0033, #a3002a);
       color: white;
-      padding: 42px 20px;
+      padding: 54px 20px 44px;
       text-align: center;
     }
 
     header h1 {
+      margin: 0 0 10px;
+      font-size: 3rem;
+      line-height: 1.1;
+    }
+
+    .subtitle {
       margin: 0;
-      font-size: 2.8em;
+      font-size: 1.2rem;
+      font-weight: 600;
     }
 
-    header p {
-      margin: 8px 0;
-      font-size: 1.08em;
+    .contact-line {
+      margin-top: 14px;
+      font-size: 1rem;
     }
 
-    header a {
-      color: #ffffff;
-      font-weight: 500;
+    .contact-line a {
+      color: white;
+      font-weight: 600;
+    }
+
+    .action-buttons {
+      margin-top: 22px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 18px;
+      border-radius: 999px;
+      background: white;
+      color: var(--rutgers-red);
+      font-weight: 700;
+      border: 2px solid transparent;
+      transition: 0.2s ease;
+    }
+
+    .btn:hover {
       text-decoration: none;
+      transform: translateY(-1px);
     }
 
-    header a:hover {
-      text-decoration: underline;
+    .btn-outline {
+      background: transparent;
+      color: white;
+      border-color: rgba(255,255,255,0.7);
     }
 
     .container {
-      max-width: 920px;
-      margin: 30px auto;
-      padding: 0 20px 30px;
+      max-width: 980px;
+      margin: 28px auto 40px;
+      padding: 0 20px;
     }
 
     .card {
-      background: white;
-      border-radius: 12px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
       padding: 26px 28px;
       margin-bottom: 22px;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.06);
-      transition: transform 0.18s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-2px);
+      box-shadow: var(--shadow);
     }
 
     h2 {
-      border-left: 5px solid #cc0033;
-      padding-left: 10px;
-      color: #cc0033;
       margin-top: 0;
-      margin-bottom: 16px;
+      margin-bottom: 18px;
+      color: var(--rutgers-red);
+      font-size: 1.7rem;
+      border-left: 5px solid var(--rutgers-red);
+      padding-left: 12px;
     }
 
     h3 {
-      margin-bottom: 8px;
-      margin-top: 18px;
-      color: #222;
+      margin: 0 0 6px;
+      font-size: 1.12rem;
     }
 
-    .meta {
-      color: #555;
-      font-style: italic;
-      margin-top: -4px;
-      margin-bottom: 10px;
+    .intro {
+      font-size: 1.06rem;
+      color: #333;
     }
 
-    ul {
-      padding-left: 22px;
-      margin-top: 8px;
+    .section-row {
+      margin-bottom: 22px;
+    }
+
+    .section-row:last-child {
       margin-bottom: 0;
     }
 
-    li {
-      margin-bottom: 6px;
-    }
-
-    .two-column {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 22px;
-    }
-
-    .col {
-      flex: 1 1 340px;
-    }
-
-    .school-row,
-    .project-row {
-      margin-bottom: 18px;
-    }
-
-    .school-header,
-    .project-header {
+    .row-header {
       display: flex;
       justify-content: space-between;
       gap: 16px;
-      flex-wrap: wrap;
       align-items: baseline;
+      flex-wrap: wrap;
     }
 
-    .school-header strong,
-    .project-header strong {
-      font-size: 1.02em;
-    }
-
-    .date {
-      color: #555;
-      font-size: 0.96em;
-      white-space: nowrap;
-    }
-
+    .meta,
+    .date,
+    .location,
     .subtext {
-      color: #333;
-      margin-top: 3px;
+      color: var(--muted);
+      font-size: 0.97rem;
     }
 
-    .gpa {
-      color: #333;
-      margin-top: 2px;
+    ul {
+      margin: 10px 0 0;
+      padding-left: 22px;
     }
 
-    .tagline {
-      font-size: 1.05em;
-      color: #333;
+    li {
+      margin-bottom: 7px;
     }
 
-    .skills-list li {
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+    }
+
+    .project-card {
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 18px 18px 14px;
+      background: #fff;
+    }
+
+    .project-card + .project-card {
+      margin-top: 16px;
+    }
+
+    .tag {
+      display: inline-block;
+      margin-top: 6px;
+      margin-bottom: 8px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: #fbe3ea;
+      color: #9a0028;
+      font-size: 0.84rem;
+      font-weight: 700;
+    }
+
+    .skill-list li {
       margin-bottom: 8px;
     }
 
-    @media (max-width: 700px) {
+    footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.95rem;
+      padding: 8px 20px 30px;
+    }
+
+    @media (max-width: 760px) {
       header h1 {
-        font-size: 2.2em;
+        font-size: 2.35rem;
+      }
+
+      .grid-2 {
+        grid-template-columns: 1fr;
       }
 
       .card {
-        padding: 22px 20px;
+        padding: 22px 18px;
       }
     }
   </style>
 </head>
 <body>
 
-<header>
-  <h1>Yinuo Zheng</h1>
-  <p>Computer Science Student at Rutgers University</p>
-  <p>
-    Email:
-    <a href="mailto:yinuo8169@gmail.com">yinuo8169@gmail.com</a>
-    |
-    Phone: +1-201-561-2742
-  </p>
-  <p>New Brunswick, New Jersey, United States</p>
-</header>
+  <header>
+    <h1>Yinuo Zheng</h1>
+    <p class="subtitle">Computer Science Student at Rutgers University</p>
+    <div class="contact-line">
+      New Brunswick, New Jersey, United States ·
+      <a href="mailto:yinuo8169@gmail.com">yinuo8169@gmail.com</a> ·
+      +1-201-561-2742
+    </div>
 
-<div class="container">
+    <div class="action-buttons">
+      <a class="btn" href="mailto:yinuo8169@gmail.com">Email Me</a>
+      <a class="btn btn-outline" href="https://github.com/yinuo8169" target="_blank">GitHub</a>
+      <a class="btn btn-outline" href="resume.pdf" target="_blank">View Resume</a>
+    </div>
+  </header>
 
-  <div class="card">
-    <p class="tagline">
-      Hello! I'm Yinuo, a Computer Science student interested in software engineering,
-      systems, data processing, and practical AI-assisted workflows. I'm currently seeking
-      internship opportunities where I can apply my technical background to real-world problems.
-    </p>
-  </div>
+  <main class="container">
 
-  <div class="card">
-    <h2>Education</h2>
+    <section class="card">
+      <h2>About</h2>
+      <p class="intro">
+        Hello! I'm Yinuo, a Computer Science student interested in software engineering,
+        systems, data processing, and practical AI-assisted workflows. I am currently
+        seeking internship opportunities where I can apply my technical background to
+        real-world problems and continue growing as a builder and problem solver.
+      </p>
+    </section>
 
-    <div class="school-row">
-      <div class="school-header">
-        <strong>Rutgers University – New Brunswick, United States</strong>
-        <span class="date">Sep 2024 – Dec 2026</span>
+    <section class="card">
+      <h2>Education</h2>
+
+      <div class="section-row">
+        <div class="row-header">
+          <h3>Rutgers University – New Brunswick, United States</h3>
+          <span class="date">Sep 2024 – Dec 2026</span>
+        </div>
+        <div class="subtext">B.S. in Computer Science</div>
+        <div class="meta">GPA: 3.97 / 4.0 · Dean’s List</div>
+        <ul>
+          <li>Coursework: Discrete Structures, Computer Architecture, System Programming, Principles of Information and Data Management, Programming Languages</li>
+        </ul>
       </div>
-      <div class="subtext">B.S. in Computer Science</div>
-      <div class="gpa">GPA: 3.97 / 4.0</div>
-      <ul>
-        <li>Honors: Dean’s List</li>
-        <li>Coursework: Discrete Structures, Computer Architecture, System Programming, Principles of Information and Data Management, Programming Languages</li>
-      </ul>
-    </div>
 
-    <div class="school-row">
-      <div class="school-header">
-        <strong>Xi’an Jiaotong-Liverpool University, Suzhou, China</strong>
-        <span class="date">Sep 2022 – May 2024</span>
+      <div class="section-row">
+        <div class="row-header">
+          <h3>Xi’an Jiaotong-Liverpool University – Suzhou, China</h3>
+          <span class="date">Sep 2022 – May 2024</span>
+        </div>
+        <div class="subtext">BSC Information and Computing Sciences</div>
+        <div class="meta">GPA: 3.7 / 4.0</div>
+        <ul>
+          <li>Coursework: Operating Systems Concepts, Artificial Intelligence, Algorithmic Foundations and Problem Solving</li>
+        </ul>
       </div>
-      <div class="subtext">BSC Information and Computing Sciences</div>
-      <div class="gpa">GPA: 3.7 / 4.0</div>
-      <ul>
-        <li>Coursework: Operating Systems Concepts, Artificial Intelligence, Algorithmic Foundations and Problem Solving</li>
-      </ul>
-    </div>
-  </div>
+    </section>
 
-  <div class="card">
-    <h2>Projects</h2>
+    <section class="card">
+      <h2>Projects</h2>
 
-    <div class="project-row">
-      <div class="project-header">
-        <strong>AI-Assisted Information Analysis System</strong>
+      <div class="project-card">
+        <h3>AI-Assisted Information Analysis System</h3>
+        <span class="tag">AI Workflow</span>
+        <ul>
+          <li>Designed structured prompting strategies to transform unstructured text into concise summaries, key insights, and actionable recommendations.</li>
+          <li>Compared multiple prompt formulations and identified structured prompts as more effective in improving clarity and usability of outputs.</li>
+          <li>Developed a reusable workflow that reduced manual effort in processing large amounts of text-based information.</li>
+          <li>Generated outputs that could support tasks such as study planning, information summarization, and decision-making.</li>
+        </ul>
       </div>
-      <ul>
-        <li>Designed structured prompting strategies to transform unstructured text into concise summaries, key insights, and actionable recommendations.</li>
-        <li>Compared multiple prompt formulations and identified structured prompts as more effective in improving clarity and usability of outputs.</li>
-        <li>Developed a reusable workflow that reduced manual effort in processing large amounts of text-based information.</li>
-        <li>Generated outputs that could support tasks such as study planning, information summarization, and decision-making.</li>
-      </ul>
-    </div>
 
-    <div class="project-row">
-      <div class="project-header">
-        <strong>Low-Level Memory Management &amp; Security Analysis</strong>
+      <div class="project-card">
+        <h3>Low-Level Memory Management &amp; Security Analysis</h3>
+        <span class="tag">Systems / C</span>
+        <ul>
+          <li>Implemented a custom memory allocation system to simulate dynamic memory management.</li>
+          <li>Applied validation and runtime checks to detect invalid memory access and improve system reliability.</li>
+          <li>Conducted testing under different scenarios to analyze system behavior and identify potential issues.</li>
+          <li>Strengthened understanding of system-level problem solving and defensive programming techniques.</li>
+        </ul>
       </div>
-      <ul>
-        <li>Implemented a custom memory allocation system to simulate dynamic memory management.</li>
-        <li>Applied validation and runtime checks to detect invalid memory access and improve system reliability.</li>
-        <li>Conducted testing under different scenarios to analyze system behavior and identify potential issues.</li>
-        <li>Strengthened understanding of system-level problem solving and defensive programming techniques.</li>
-      </ul>
-    </div>
 
-    <div class="project-row">
-      <div class="project-header">
-        <strong>File System Scanner &amp; Data Validation Tool</strong>
+      <div class="project-card">
+        <h3>File System Scanner &amp; Data Validation Tool</h3>
+        <span class="tag">Python / Data Processing</span>
+        <ul>
+          <li>Developed a tool to traverse file systems and process structured and unstructured data.</li>
+          <li>Implemented validation and parsing techniques to detect irregular or malformed inputs.</li>
+          <li>Improved robustness of data processing by ensuring consistent handling of unexpected input scenarios.</li>
+          <li>Enabled efficient processing of large directory structures through recursive scanning and error handling.</li>
+        </ul>
       </div>
-      <ul>
-        <li>Developed a tool to traverse file systems and process structured and unstructured data.</li>
-        <li>Implemented validation and parsing techniques to detect irregular or malformed inputs.</li>
-        <li>Improved robustness of data processing by ensuring consistent handling of unexpected input scenarios.</li>
-        <li>Enabled efficient processing of large directory structures through recursive scanning and error handling.</li>
-      </ul>
-    </div>
-  </div>
+    </section>
 
-  <div class="card two-column">
-    <div class="col">
-      <h2>Technical Skills</h2>
-      <ul class="skills-list">
-        <li><strong>Programming:</strong> Python, C, Java, SQL, MATLAB, HTML/CSS</li>
-        <li><strong>Tools:</strong> Git, Linux, Makefile, VS Code, MySQL, Jupyter Notebook</li>
-        <li><strong>Other Software:</strong> Adobe Photoshop, Microsoft Office Suite</li>
-      </ul>
-    </div>
+    <section class="grid-2">
+      <div class="card">
+        <h2>Technical Skills</h2>
+        <ul class="skill-list">
+          <li><strong>Programming:</strong> Python, C, Java, SQL, MATLAB, HTML/CSS</li>
+          <li><strong>Tools:</strong> Git, Linux, Makefile, VS Code, MySQL, Jupyter Notebook</li>
+          <li><strong>Software:</strong> Adobe Photoshop, Microsoft Office Suite</li>
+        </ul>
+      </div>
 
-    <div class="col">
-      <h2>Languages</h2>
-      <ul class="skills-list">
-        <li><strong>English:</strong> Professional</li>
-        <li><strong>Chinese:</strong> Native</li>
-      </ul>
-    </div>
-  </div>
+      <div class="card">
+        <h2>Languages</h2>
+        <ul class="skill-list">
+          <li><strong>English:</strong> Professional</li>
+          <li><strong>Chinese:</strong> Native</li>
+        </ul>
+      </div>
+    </section>
 
-</div>
+  </main>
+
+  <footer>
+    © 2026 Yinuo Zheng
+  </footer>
 
 </body>
 </html>
