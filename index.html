@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Yinuo Zheng - Portfolio</title>
+  <title>Yinuo Zheng</title>
   <style>
     body {
       font-family: 'Segoe UI', Tahoma, sans-serif;
@@ -11,12 +11,13 @@
       padding: 0;
       background-color: #f8f9fa;
       color: #222;
+      line-height: 1.6;
     }
 
     header {
       background-color: #cc0033;
       color: white;
-      padding: 40px 20px;
+      padding: 42px 20px;
       text-align: center;
     }
 
@@ -27,62 +28,131 @@
 
     header p {
       margin: 8px 0;
-      font-size: 1.1em;
+      font-size: 1.08em;
     }
 
     header a {
       color: #ffffff;
       font-weight: 500;
-      text-shadow: 0 0 3px #000;
+      text-decoration: none;
+    }
+
+    header a:hover {
+      text-decoration: underline;
     }
 
     .container {
-      max-width: 900px;
+      max-width: 920px;
       margin: 30px auto;
-      padding: 0 20px;
+      padding: 0 20px 30px;
     }
 
     .card {
       background: white;
-      border-radius: 10px;
-      padding: 25px;
-      margin-bottom: 20px;
-      box-shadow: 0 3px 6px rgba(0,0,0,0.06);
-      transition: transform 0.2s ease;
+      border-radius: 12px;
+      padding: 26px 28px;
+      margin-bottom: 22px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.06);
+      transition: transform 0.18s ease;
     }
 
     .card:hover {
-      transform: scale(1.01);
+      transform: translateY(-2px);
     }
 
     h2 {
       border-left: 5px solid #cc0033;
       padding-left: 10px;
       color: #cc0033;
-      margin-bottom: 15px;
+      margin-top: 0;
+      margin-bottom: 16px;
+    }
+
+    h3 {
+      margin-bottom: 8px;
+      margin-top: 18px;
+      color: #222;
+    }
+
+    .meta {
+      color: #555;
+      font-style: italic;
+      margin-top: -4px;
+      margin-bottom: 10px;
     }
 
     ul {
-      padding-left: 20px;
+      padding-left: 22px;
+      margin-top: 8px;
+      margin-bottom: 0;
     }
 
-    a {
-      color: #cc0033;
-      text-decoration: none;
+    li {
+      margin-bottom: 6px;
     }
 
-    a:hover {
-      text-decoration: underline;
-    }
-
-    .flex {
+    .two-column {
       display: flex;
       flex-wrap: wrap;
-      gap: 20px;
+      gap: 22px;
     }
 
-    .left, .right {
-      flex: 1 1 300px;
+    .col {
+      flex: 1 1 340px;
+    }
+
+    .school-row,
+    .project-row {
+      margin-bottom: 18px;
+    }
+
+    .school-header,
+    .project-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      align-items: baseline;
+    }
+
+    .school-header strong,
+    .project-header strong {
+      font-size: 1.02em;
+    }
+
+    .date {
+      color: #555;
+      font-size: 0.96em;
+      white-space: nowrap;
+    }
+
+    .subtext {
+      color: #333;
+      margin-top: 3px;
+    }
+
+    .gpa {
+      color: #333;
+      margin-top: 2px;
+    }
+
+    .tagline {
+      font-size: 1.05em;
+      color: #333;
+    }
+
+    .skills-list li {
+      margin-bottom: 8px;
+    }
+
+    @media (max-width: 700px) {
+      header h1 {
+        font-size: 2.2em;
+      }
+
+      .card {
+        padding: 22px 20px;
+      }
     }
   </style>
 </head>
@@ -90,70 +160,113 @@
 
 <header>
   <h1>Yinuo Zheng</h1>
-  <p>Computer Science Student @ Rutgers University</p>
+  <p>Computer Science Student at Rutgers University</p>
   <p>
     Email:
-    <a href="mailto:yz1618@scarletmail.rutgers.edu">
-      yz1618@scarletmail.rutgers.edu
-    </a>
+    <a href="mailto:yinuo8169@gmail.com">yinuo8169@gmail.com</a>
     |
     Phone: +1-201-561-2742
   </p>
+  <p>New Brunswick, New Jersey, United States</p>
 </header>
 
 <div class="container">
 
   <div class="card">
-    <p>Hello! I'm Yinuo, a Computer Science student passionate about backend development, data, and building practical tech solutions. Currently exploring internship opportunities to apply my skills in real-world settings.</p>
+    <p class="tagline">
+      Hello! I'm Yinuo, a Computer Science student interested in software engineering,
+      systems, data processing, and practical AI-assisted workflows. I'm currently seeking
+      internship opportunities where I can apply my technical background to real-world problems.
+    </p>
   </div>
 
   <div class="card">
     <h2>Education</h2>
-    <ul>
-      <li><strong>Rutgers University-New Brunswick</strong> — B.S. in Computer Science (Sept 2024 - May 2027)</li>
-      <li><strong>Xi'an Jiaotong-Liverpool University</strong> — BSC in Info & Computing Sciences (Sept 2022 - May 2024)</li>
-    </ul>
-  </div>
 
-  <div class="card flex">
-    <div class="left">
-      <h2>Skills</h2>
+    <div class="school-row">
+      <div class="school-header">
+        <strong>Rutgers University – New Brunswick, United States</strong>
+        <span class="date">Sep 2024 – Dec 2026</span>
+      </div>
+      <div class="subtext">B.S. in Computer Science</div>
+      <div class="gpa">GPA: 3.97 / 4.0</div>
       <ul>
-        <li>Python, Java, C, SQL, MATLAB</li>
-        <li>Pandas, Matplotlib, Git, UML</li>
-        <li>MySQL, Excel, Word, PowerPoint, Adobe Photoshop</li>
-        <li>HTML5, CSS3, GitHub Pages</li>
-      </ul>      
+        <li>Honors: Dean’s List</li>
+        <li>Coursework: Discrete Structures, Computer Architecture, System Programming, Principles of Information and Data Management, Programming Languages</li>
+      </ul>
     </div>
-    <div class="right">
-      <h2>Languages & Interests</h2>
+
+    <div class="school-row">
+      <div class="school-header">
+        <strong>Xi’an Jiaotong-Liverpool University, Suzhou, China</strong>
+        <span class="date">Sep 2022 – May 2024</span>
+      </div>
+      <div class="subtext">BSC Information and Computing Sciences</div>
+      <div class="gpa">GPA: 3.7 / 4.0</div>
       <ul>
-        <li>Chinese (Native), English (Professional)</li>
-        <li>Hiking, Fitness, K-pop, Photography</li>
+        <li>Coursework: Operating Systems Concepts, Artificial Intelligence, Algorithmic Foundations and Problem Solving</li>
       </ul>
     </div>
   </div>
 
   <div class="card">
-    <h2>Experience</h2>
-    <h3>Backend Development Intern — China Merchants Bank</h3>
-    <p><em>June 2024 – August 2024 | Zhengzhou, China</em></p>
-    <ul>
-      <li>Assisted in internal system testing and backend module development.</li>
-      <li>Worked with senior developers on debugging and version control.</li>
-      <li>Gained hands-on experience with collaborative workflows and enterprise codebases.</li>
-    </ul>
+    <h2>Projects</h2>
+
+    <div class="project-row">
+      <div class="project-header">
+        <strong>AI-Assisted Information Analysis System</strong>
+      </div>
+      <ul>
+        <li>Designed structured prompting strategies to transform unstructured text into concise summaries, key insights, and actionable recommendations.</li>
+        <li>Compared multiple prompt formulations and identified structured prompts as more effective in improving clarity and usability of outputs.</li>
+        <li>Developed a reusable workflow that reduced manual effort in processing large amounts of text-based information.</li>
+        <li>Generated outputs that could support tasks such as study planning, information summarization, and decision-making.</li>
+      </ul>
+    </div>
+
+    <div class="project-row">
+      <div class="project-header">
+        <strong>Low-Level Memory Management &amp; Security Analysis</strong>
+      </div>
+      <ul>
+        <li>Implemented a custom memory allocation system to simulate dynamic memory management.</li>
+        <li>Applied validation and runtime checks to detect invalid memory access and improve system reliability.</li>
+        <li>Conducted testing under different scenarios to analyze system behavior and identify potential issues.</li>
+        <li>Strengthened understanding of system-level problem solving and defensive programming techniques.</li>
+      </ul>
+    </div>
+
+    <div class="project-row">
+      <div class="project-header">
+        <strong>File System Scanner &amp; Data Validation Tool</strong>
+      </div>
+      <ul>
+        <li>Developed a tool to traverse file systems and process structured and unstructured data.</li>
+        <li>Implemented validation and parsing techniques to detect irregular or malformed inputs.</li>
+        <li>Improved robustness of data processing by ensuring consistent handling of unexpected input scenarios.</li>
+        <li>Enabled efficient processing of large directory structures through recursive scanning and error handling.</li>
+      </ul>
+    </div>
   </div>
 
-  <div class="card">
-  <h2>Projects</h2>
-  <h3>Customer Order Analytics Dashboard</h3>
-  <ul>
-    <li>Built a data analysis tool using Python and Pandas to process e-commerce order data from CSV files.</li>
-    <li>Generated revenue summaries, daily order trend charts, and cleaned real-world data.</li>
-  </ul>
-</div>
+  <div class="card two-column">
+    <div class="col">
+      <h2>Technical Skills</h2>
+      <ul class="skills-list">
+        <li><strong>Programming:</strong> Python, C, Java, SQL, MATLAB, HTML/CSS</li>
+        <li><strong>Tools:</strong> Git, Linux, Makefile, VS Code, MySQL, Jupyter Notebook</li>
+        <li><strong>Other Software:</strong> Adobe Photoshop, Microsoft Office Suite</li>
+      </ul>
+    </div>
 
+    <div class="col">
+      <h2>Languages</h2>
+      <ul class="skills-list">
+        <li><strong>English:</strong> Professional</li>
+        <li><strong>Chinese:</strong> Native</li>
+      </ul>
+    </div>
+  </div>
 
 </div>
 
